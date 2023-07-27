@@ -4,7 +4,7 @@ const Create = () => {
   // const CoursePage = () => {
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-2xl font-bold mb-5">Add New Course</h2>
+      <h2 className="text-2xl font-bold mb-5">Add New Quiz</h2>
       <form>
         <div className="mb-4">
           <label
