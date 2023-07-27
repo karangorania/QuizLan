@@ -1,18 +1,11 @@
-'use client';
-import Image from 'next/image';
-import images from './assets';
-import Link from 'next/link';
+"use client";
+import Image from "next/image";
+import images from "./assets";
+import Link from "next/link";
 
 export default function Home() {
-  // const navigate = useNavigate();
   return (
     <div className="home-wrapper">
-      <div className="home-navbar">
-        <p>QUIZ</p>
-        <button type="button" className="bsBtn-info bsBtn-info-border">
-          button
-        </button>
-      </div>
       <div className="home-content">
         <h2>Punny headline</h2>
         <p>
@@ -60,9 +53,9 @@ export default function Home() {
       </div>
       <div className="home-footer">
         <p id="poweredByText">
-          Powered by{' '}
+          Made Love By{" "}
           <span id="poweredByBottomText">
-            <span id="quizlan">Quiz</span>
+            <span id="quizlan">QuizLan</span>
           </span>
         </p>
         <p className="copyRightText">

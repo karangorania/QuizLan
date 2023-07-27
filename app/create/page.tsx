@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const Create = () => {
-  // const CoursePage = () => {
   return (
     <div className="container mx-auto px-4">
       <h2 className="text-2xl font-bold mb-5">Add New Quiz</h2>
