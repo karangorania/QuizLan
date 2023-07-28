@@ -9,6 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metaplex-foundation/mpl-candy-machine": "^6.0.0-alpha.18",
+    "@metaplex-foundation/mpl-token-metadata": "^3.0.0-alpha.24",
+    "@metaplex-foundation/mpl-toolbox": "^0.8.0",
+    "@metaplex-foundation/umi": "^0.8.7",
+    "@metaplex-foundation/umi-bundle-defaults": "^0.8.7",
+    "@metaplex-foundation/umi-signer-wallet-adapters": "^0.8.7",
+    "@solana/wallet-adapter-base": "^0.9.22",
     "@solana/wallet-adapter-react": "^0.15.33",
     "@solana/wallet-adapter-react-ui": "^0.9.32",
     "@solana/wallet-adapter-wallets": "^0.19.19",
