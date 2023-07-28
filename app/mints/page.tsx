@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import images from '../assets';
-import dynamic from 'next/dynamic';
-import { useEffect, useMemo, useState } from 'react';
+import React from "react";
+import Image from "next/image";
+import images from "../assets";
+import dynamic from "next/dynamic";
+import { useEffect, useMemo, useState } from "react";
 
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { WalletProvider, useWallet } from '@solana/wallet-adapter-react';
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletProvider, useWallet } from "@solana/wallet-adapter-react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   LedgerWalletAdapter,
   SolflareWalletAdapter,
-} from '@solana/wallet-adapter-wallets';
-import '@solana/wallet-adapter-react-ui/styles.css';
+} from "@solana/wallet-adapter-wallets";
+import "@solana/wallet-adapter-react-ui/styles.css";
 
-import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
+import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
   base58PublicKey,
   generateSigner,
@@ -27,14 +27,14 @@ import {
   transactionBuilder,
   Umi,
   unwrapSome,
-} from '@metaplex-foundation/umi';
-import { walletAdapterIdentity } from '@metaplex-foundation/umi-signer-wallet-adapters';
-import { setComputeUnitLimit } from '@metaplex-foundation/mpl-toolbox';
+} from "@metaplex-foundation/umi";
+import { walletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
+import { setComputeUnitLimit } from "@metaplex-foundation/mpl-toolbox";
 import {
   mplTokenMetadata,
   fetchDigitalAsset,
   TokenStandard,
-} from '@metaplex-foundation/mpl-token-metadata';
+} from "@metaplex-foundation/mpl-token-metadata";
 import {
   mplCandyMachine,
   fetchCandyMachine,
@@ -45,7 +45,7 @@ import {
   SolPayment,
   CandyMachine,
   CandyGuard,
-} from '@metaplex-foundation/mpl-candy-machine';
+} from "@metaplex-foundation/mpl-candy-machine";
 
 const Mints = () => {
   let key: typeof PublicKey;
@@ -69,13 +69,13 @@ const Mints = () => {
   //     { ssr: false }
   //   );
   const network =
-    process.env.NEXT_PUBLIC_NETWORK === 'devnet'
+    process.env.NEXT_PUBLIC_NETWORK === "devnet"
       ? WalletAdapterNetwork.Devnet
-      : process.env.NEXT_PUBLIC_NETWORK === 'testnet'
+      : process.env.NEXT_PUBLIC_NETWORK === "testnet"
       ? WalletAdapterNetwork.Testnet
       : WalletAdapterNetwork.Mainnet;
 
-  const endpoint = 'https://api.devnet.solana.com';
+  const endpoint = "https://api.devnet.solana.com";
 
   const wallets = useMemo(
     () => [new LedgerWalletAdapter(), new SolflareWalletAdapter({ network })],
@@ -84,7 +84,7 @@ const Mints = () => {
 
   const WalletMultiButtonDynamic = dynamic(
     async () =>
-      (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
+      (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
     { ssr: false }
   );
 
@@ -109,9 +109,9 @@ const Mints = () => {
   // retrieve item counts to determine availability and
   // from the solPayment, display cost on the Mint button
   const retrieveAvailability = async () => {
-    const cmId = 'AJFunyvECPmrAdUcx79HF6N1ScrA16T3rHCQHKkS8gbq';
+    const cmId = "AJFunyvECPmrAdUcx79HF6N1ScrA16T3rHCQHKkS8gbq";
     if (!cmId) {
-      setMintMsg('No candy machine ID found. Add environment variable.');
+      setMintMsg("No candy machine ID found. Add environment variable.");
       return;
     }
     const candyMachine: CandyMachine = await fetchCandyMachine(
@@ -188,7 +188,7 @@ const Mints = () => {
     const mintBtnHandler = async () => {
       if (!cmv3v2 || !defaultCandyGuardSet) {
         setMintMsg(
-          'There was an error fetching the candy machine. Try refreshing your browser window.'
+          "There was an error fetching the candy machine. Try refreshing your browser window."
         );
         return;
       }
@@ -235,14 +235,14 @@ const Mints = () => {
           );
 
         const { signature } = await tx.sendAndConfirm(umi, {
-          confirm: { commitment: 'finalized' },
+          confirm: { commitment: "finalized" },
           send: {
             skipPreflight: true,
           },
         });
 
         setMintCreated(nftSigner.publicKey);
-        setMintMsg('Mint was successful!');
+        setMintMsg("Mint was successful!");
       } catch (err: any) {
         console.error(err);
         setMintMsg(err.message);
@@ -251,36 +251,38 @@ const Mints = () => {
       }
     };
 
-    if (mintCreated) {
-      return (
-        <a
-          className="text-center rounded-md border p-4"
-          target="_blank"
-          rel="noreferrer"
-          href={`https://solscan.io/token/${base58PublicKey(mintCreated)}${
-            network === 'devnet' ? '?cluster=devnet' : ''
-          }`}
-        >
-          <Image
-            className=""
-            src={images.Polygon}
-            alt="Blank NFT"
-            width={300}
-            height={300}
-            priority
-          />
-          <p className="mintAddress">
-            <code>{base58PublicKey(mintCreated)}</code>
-          </p>
-        </a>
-      );
-    }
+    // if (mintCreated) {
+    //   return (
+    //     <div>
+    //       <a
+    //         className="text-center rounded-md border p-4"
+    //         target="_blank"
+    //         rel="noreferrer"
+    //         href={`https://solscan.io/token/${base58PublicKey(mintCreated)}${
+    //           network === "devnet" ? "?cluster=devnet" : ""
+    //         }`}
+    //       >
+    //         <Image
+    //           className=""
+    //           src={images.Polygon}
+    //           alt="Blank NFT"
+    //           width={300}
+    //           height={300}
+    //           priority
+    //         />
+    //         <p className="mintAddress">
+    //           <code>{base58PublicKey(mintCreated)}</code>
+    //         </p>
+    //       </a>
+    //     </div>
+    //   );
+    // }
 
     return (
       <>
         <button
           onClick={mintBtnHandler}
-          className="h-16 w-72 text-lg font-semibold px-6 bg-purple-400 cursor-pointer"
+          className="w-72 text-lg mt-[30px] font-semibold px-6 button-layout"
           disabled={mintDisabled || loading}
         >
           MINT
@@ -292,41 +294,42 @@ const Mints = () => {
   }; // </Mint>
 
   return (
-    <div>
+    <div className="quiz-detail-wrapper">
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           {/* <WalletMultiButtonDynamic /> */}
-          <main className="flex flex-col justify-start items-center space-y-4 p-24 min-h-screen">
+          {/* <main className="flex flex-col justify-start items-center space-y-4 p-24 min-h-screen"> */}
+          <main className="mint-content-wrapper quiz-content-wrapper">
             {/* <h1>Mint Phantom Quiz Crest</h1> */}
-            <h1 className="text-4xl font-bold text-purple-600 uppercase tracking-widest bg-yellow-300 p-3 inline-block shadow-lg rounded-lg">
+            {/* <h1 className="text-4xl font-bold text-purple-600 uppercase tracking-widest bg-yellow-300 p-3 inline-block shadow-lg rounded-lg">
               Phantom Quiz Crest
-            </h1>
-
-            <Image
-              className=""
-              src={images.Phantom}
-              alt="Preview of NFTs"
-              width={300}
-              height={300}
-              priority
-            />
-            <div className="flex flex-row flex-wrap justify-between space-x-8">
-              <div>
+            </h1> */}
+            <div className="mint-on-going-wrapper">
+              <Image
+                className=""
+                src={images.Phantom}
+                alt="Preview of NFTs"
+                width={300}
+                height={300}
+                priority
+              />
+              <p>
                 Minted: {countMinted} / {countTotal}
-              </div>
-              <div>Remaining: {countRemaining}</div>
+              </p>
+              <p>Remaining: {countRemaining}</p>
+              <Mint />
             </div>
-            <Mint />
+
             {mintMsg && (
-              <div className="">
-                <button
+              <div className="mint-success-wrapper">
+                {/* <button
                   className=""
                   onClick={() => {
                     setMintMsg(undefined);
                   }}
                 >
-                  hello &times;
-                </button>
+                  &times;
+                </button> */}
                 <span>{mintMsg}</span>
               </div>
             )}
