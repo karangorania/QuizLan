@@ -1,12 +1,27 @@
-'use client';
-import Link from 'next/link';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import images from "../assets";
 
 const Quiz = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   function ClaimBadge() {
-    return <div>Success</div>;
+    return (
+      <div className="quiz-success-wrapper">
+        <div>
+          <h2>New badge earned!</h2>
+          <p>
+            Claim your badge with your crypto wallet. This won’t cost anything.
+          </p>
+          <button></button>
+        </div>
+        <div>
+          <Image src={images.arbitrum} alt="ArbitrumLogo" />
+        </div>
+      </div>
+    );
   }
 
   function QuizQuens() {
@@ -21,7 +36,9 @@ const Quiz = () => {
           </div>
         </div>
         <div className="quen-footer">
-          <button onClick={() => setIsSuccess(true)}>Success</button>
+          <button onClick={() => setIsSuccess(true)} className="button-layout">
+            Success
+          </button>
         </div>
       </>
     );
@@ -35,8 +52,8 @@ const Quiz = () => {
         </Link>
       </div>
       <div className="quiz-content-wrapper">
-        <p className="content-title">
-          {isSuccess ? 'CLAIM BADGE' : 'SIMPLE QUIZ'}
+        <p className="title-layot">
+          {isSuccess ? "CLAIM BADGE" : "SIMPLE QUIZ"}
         </p>
         {isSuccess ? <ClaimBadge /> : <QuizQuens />}
       </div>
