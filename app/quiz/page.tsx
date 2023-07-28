@@ -1,6 +1,6 @@
-"use client";
-import Link from "next/link";
-import React, { useState } from "react";
+'use client';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 const Quiz = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -36,7 +36,7 @@ const Quiz = () => {
       </div>
       <div className="quiz-content-wrapper">
         <p className="content-title">
-          {isSuccess ? "CLAIM BADGE" : "SIMPLE QUIZ"}
+          {isSuccess ? 'CLAIM BADGE' : 'SIMPLE QUIZ'}
         </p>
         {isSuccess ? <ClaimBadge /> : <QuizQuens />}
       </div>
