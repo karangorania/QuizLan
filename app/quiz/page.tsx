@@ -7,22 +7,22 @@ import images from "../assets";
 const Quiz = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
-  function ClaimBadge() {
-    return (
-      <div className="quiz-success-wrapper">
-        <div>
-          <h2>New badge earned!</h2>
-          <p>
-            Claim your badge with your crypto wallet. This won’t cost anything.
-          </p>
-          <button></button>
-        </div>
-        <div>
-          <Image src={images.arbitrum} alt="ArbitrumLogo" />
-        </div>
-      </div>
-    );
-  }
+  // function ClaimBadge() {
+  //   return (
+  //     <div className="quiz-success-wrapper">
+  //       <div>
+  //         <h2>New badge earned!</h2>
+  //         <p>
+  //           Claim your badge with your crypto wallet. This won’t cost anything.
+  //         </p>
+  //         <button></button>
+  //       </div>
+  //       <div>
+  //         <Image src={images.arbitrum} alt="ArbitrumLogo" />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   function QuizQuens() {
     return (
@@ -55,7 +55,7 @@ const Quiz = () => {
         <p className="title-layot">
           {isSuccess ? "CLAIM BADGE" : "SIMPLE QUIZ"}
         </p>
-        {isSuccess ? <ClaimBadge /> : <QuizQuens />}
+        {/* {isSuccess ? <ClaimBadge /> : <QuizQuens />} */}
       </div>
     </div>
   );
