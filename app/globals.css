@@ -37,11 +37,9 @@
   --fontRighteous: 'Righteous', cursive;
 
   --bgGradient: linear-gradient(to right, #0284ad70, #0284ad, #04feb3, #3fede1);
-  --bsGradient: linear-gradient(
-    318deg,
-    rgb(93 50 106 / 10%),
-    rgb(93 50 106 / 0%)
-  );
+  --bsGradient: linear-gradient(318deg,
+      rgb(93 50 106 / 10%),
+      rgb(93 50 106 / 0%));
   --bsShadowOut: -2px -2px 10px rgb(255 255 255 / 10%),
     2px 2px 10px rgb(0 0 0 / 75%);
   --bsShadowIn: inset 2px 2px 10px rgb(0 0 0 / 75%),
@@ -420,16 +418,14 @@ p.copyRightText {
 #footer a:hover .rainbow,
 .rainbow:hover {
   text-decoration: none;
-  background-image: linear-gradient(
-    to left,
-    violet,
-    indigo,
-    blue,
-    green,
-    gold,
-    orange,
-    red
-  );
+  background-image: linear-gradient(to left,
+      violet,
+      indigo,
+      blue,
+      green,
+      gold,
+      orange,
+      red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -608,7 +604,7 @@ p.copyRightText {
   margin-top: 1.8em;
 }
 
-.nes-field > label,
+.nes-field>label,
 .nes-field .nes-input,
 .nes-field .nes-textarea {
   border-width: 1px;
@@ -637,7 +633,7 @@ p.copyRightText {
 .quiz-content-wrapper {
   width: 850px;
   padding: 50px;
-  height: 580px;
+  height: 630px;
   background: rgba(255, 255, 255, 0.02);
   box-shadow: 2px 2px 10px rgb(107 107 107 / 75%),
     -2px -2px 10px rgb(255 255 255 / 10%);
@@ -670,16 +666,12 @@ p.copyRightText {
   text-align: start;
   padding: 15px;
   font-size: 18px;
-  background: radial-gradient(
-      57.89% 132% at 65.79% -35%,
+  background: radial-gradient(57.89% 132% at 65.79% -35%,
       rgba(120, 123, 255, 0.06) 0%,
-      rgba(120, 123, 255, 0) 100%
-    ),
-    linear-gradient(
-      180deg,
+      rgba(120, 123, 255, 0) 100%),
+    linear-gradient(180deg,
       rgba(255, 255, 255, 0) 54.17%,
-      rgba(255, 255, 255, 0.04) 100%
-    ),
+      rgba(255, 255, 255, 0.04) 100%),
     rgba(255, 255, 255, 0.01);
   text-transform: capitalize;
   border-radius: 10px;
@@ -813,7 +805,8 @@ p.copyRightText {
 }
 
 .course-selected-img {
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 20px;
 }
 
@@ -828,16 +821,12 @@ p.copyRightText {
   padding: 25px;
   cursor: pointer;
   border-radius: 10px;
-  background: radial-gradient(
-      57.89% 132% at 65.79% -35%,
+  background: radial-gradient(57.89% 132% at 65.79% -35%,
       rgba(120, 123, 255, 0.06) 0%,
-      rgba(120, 123, 255, 0) 100%
-    ),
-    linear-gradient(
-      180deg,
+      rgba(120, 123, 255, 0) 100%),
+    linear-gradient(180deg,
       rgb(255 255 255 / 0%) 54.17%,
-      rgba(255, 255, 255, 0.04) 100%
-    ),
+      rgba(255, 255, 255, 0.04) 100%),
     rgb(255 255 255 / 5%);
 }
 
@@ -847,18 +836,23 @@ p.copyRightText {
   justify-content: center;
 }
 
-.card-arb-wrapper {
-  height: 250px;
-  margin: 10px;
-  border-radius: 10px;
-  background: #2d374b;
+.key-content {
+  font-size: 1.25rem;
+  color: gray;
 }
 
-.card-me-wrapper {
+.card-sol-wrapper {
   height: 250px;
   margin: 10px;
   border-radius: 10px;
-  background: #120c18;
+  background: #000000;
+}
+
+.card-block-wrapper {
+  height: 250px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #f2f2f2;
 }
 
 .card-ph-wrapper {
@@ -868,31 +862,27 @@ p.copyRightText {
   background: #ab9ff2;
 }
 
-.card-pol-wrapper {
+.card-nas-wrapper {
   height: 250px;
   margin: 10px;
   border-radius: 10px;
-  background: #8c44ee;
+  background: #2c2c2c;
 }
 
-.card-av-wrapper {
+.card-ec-wrapper {
   height: 250px;
   margin: 10px;
   border-radius: 10px;
-  background: #e84142;
+  background: #98daf8;
 }
 
 .input-bg-layout {
-  background: radial-gradient(
-      57.89% 132% at 65.79% -35%,
+  background: radial-gradient(57.89% 132% at 65.79% -35%,
       rgba(120, 123, 255, 0.06) 0%,
-      rgba(120, 123, 255, 0) 100%
-    ),
-    linear-gradient(
-      180deg,
+      rgba(120, 123, 255, 0) 100%),
+    linear-gradient(180deg,
       rgb(255 255 255 / 0%) 54.17%,
-      rgba(255, 255, 255, 0.04) 100%
-    ),
+      rgba(255, 255, 255, 0.04) 100%),
     rgb(255 255 255 / 5%);
   border: 0 solid;
   color: white;
@@ -900,18 +890,24 @@ p.copyRightText {
 
 .mint-content-wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  margin: 3.5rem 0;
 }
 
 .mint-success-wrapper {
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 70%;
   transform: translate(-50%, -70%);
 }
 
 .mint-on-going-wrapper {
   text-align: center;
+}
+
+.mint-img-wrapper {
+  margin: 0 auto;
 }
 
 .mint-on-going-wrapper p {
@@ -921,7 +917,7 @@ p.copyRightText {
 @media (max-width: 920px) {
   .quiz-content-wrapper {
     width: auto;
-    height: 530px;
+    height: 630px;
   }
 
   .quiz-quen-wrapper {
@@ -929,7 +925,14 @@ p.copyRightText {
   }
 
   .mint-content-wrapper {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+  .mint-success-wrapper {
+    position: relative;
+    margin: 2.5rem auto;
+    top: 0%;
+    left: 0%;
+    transform: translate(-0%, -0%);
   }
 }
