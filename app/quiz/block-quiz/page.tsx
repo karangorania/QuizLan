@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import images from '../../assets';
 import { toast, Toaster } from 'react-hot-toast';
-// import SOLMints from "./sol-mints";
+import SOLMints from '../sol-mints';
+import images from '../../assets';
 
 type Quiz = {
   id: number;
@@ -163,7 +162,14 @@ const Block = () => {
       </div>
       <div className="quiz-content-wrapper">
         <p className="title-layot">{isSuccess ? 'CLAIM BADGE' : 'QUIZ'}</p>
-        {isSuccess ? <></> : <QuizQuestions />}
+        {isSuccess ? (
+          <SOLMints
+            cmId_course="G4xLHBiG6Jq6gVhwwq2XRpKjhNkUBeNMS3AKNLWTdcKc"
+            image_name={images.BlockChain}
+          />
+        ) : (
+          <QuizQuestions />
+        )}
         <Toaster position="bottom-right" reverseOrder={false} />
       </div>
     </div>
