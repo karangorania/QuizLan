@@ -1,21 +1,21 @@
-import React from 'react';
-import images from '../assets';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import images from "../assets";
 
 const Page = () => {
   const courses = [
     {
       id: 1,
-      name: 'Arbitrum Blockchain',
+      name: "Solana Blockchain",
       description:
-        'Learn how to transact on chains beyond Ethereum mainnet in this Quest.The ultimate toolkit for building private applications is finally here.',
-      imgSrc: images.arbitrum,
+        "Learn how to transact on chains beyond Ethereum mainnet in this Quest.The ultimate toolkit for building private applications is finally here.",
+      imgSrc: images.Solana,
       structure: [
         {
           id: 1,
-          title: 'WHAT IS ALEO',
-          link: '/quiz',
+          title: "WHAT IS ALEO",
+          link: "/quiz",
         },
         // add more course structure items here as needed
       ],
