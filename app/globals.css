@@ -37,9 +37,11 @@
   --fontRighteous: 'Righteous', cursive;
 
   --bgGradient: linear-gradient(to right, #0284ad70, #0284ad, #04feb3, #3fede1);
-  --bsGradient: linear-gradient(318deg,
-      rgb(93 50 106 / 10%),
-      rgb(93 50 106 / 0%));
+  --bsGradient: linear-gradient(
+    318deg,
+    rgb(93 50 106 / 10%),
+    rgb(93 50 106 / 0%)
+  );
   --bsShadowOut: -2px -2px 10px rgb(255 255 255 / 10%),
     2px 2px 10px rgb(0 0 0 / 75%);
   --bsShadowIn: inset 2px 2px 10px rgb(0 0 0 / 75%),
@@ -359,8 +361,8 @@ button.bsBtn-info-trans:hover {
 }
 
 .nav-center-layout {
-  background: rgba(255, 255, 255, .02);
-  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   display: flex;
   left: 50%;
@@ -418,14 +420,16 @@ p.copyRightText {
 #footer a:hover .rainbow,
 .rainbow:hover {
   text-decoration: none;
-  background-image: linear-gradient(to left,
-      violet,
-      indigo,
-      blue,
-      green,
-      gold,
-      orange,
-      red);
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    gold,
+    orange,
+    red
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -604,7 +608,7 @@ p.copyRightText {
   margin-top: 1.8em;
 }
 
-.nes-field>label,
+.nes-field > label,
 .nes-field .nes-input,
 .nes-field .nes-textarea {
   border-width: 1px;
@@ -634,8 +638,9 @@ p.copyRightText {
   width: 850px;
   padding: 50px;
   height: 580px;
-  background: rgba(255, 255, 255, .02);
-  box-shadow: 2px 2px 10px rgb(107 107 107 / 75%), -2px -2px 10px rgb(255 255 255 / 10%);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 2px 2px 10px rgb(107 107 107 / 75%),
+    -2px -2px 10px rgb(255 255 255 / 10%);
 }
 
 .quiz-quen-wrapper {
@@ -665,7 +670,17 @@ p.copyRightText {
   text-align: start;
   padding: 15px;
   font-size: 18px;
-  background: radial-gradient(57.89% 132% at 65.79% -35%, rgba(120, 123, 255, .06) 0%, rgba(120, 123, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0) 54.17%, rgba(255, 255, 255, .04) 100%), rgba(255, 255, 255, .01);
+  background: radial-gradient(
+      57.89% 132% at 65.79% -35%,
+      rgba(120, 123, 255, 0.06) 0%,
+      rgba(120, 123, 255, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 54.17%,
+      rgba(255, 255, 255, 0.04) 100%
+    ),
+    rgba(255, 255, 255, 0.01);
   text-transform: capitalize;
   border-radius: 10px;
   border: 0 none;
@@ -687,10 +702,11 @@ p.copyRightText {
 }
 
 .button-layout {
-  box-shadow: inset 0 0 12px #7a797b70;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: inset 0 0 12px #7a797b70;
+  margin-bottom: -10px;
 }
 
 .title-layot {
@@ -725,8 +741,9 @@ p.copyRightText {
   text-align: center;
   justify-content: center;
   height: 550px;
-  background: rgba(255, 255, 255, .02);
-  box-shadow: 2px 2px 10px rgb(79 79 79 / 51%), -2px -2px 10px rgb(255 206 206 / 24%);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 2px 2px 10px rgb(79 79 79 / 51%),
+    -2px -2px 10px rgb(255 206 206 / 24%);
 }
 
 .home-content h2 {
@@ -756,7 +773,9 @@ p.copyRightText {
   text-align: center;
   border-radius: 20px;
   background: #0a0e1d;
-  box-shadow: -2px -2px 10px rgb(255 255 255 / 10%), 2px 2px 10px rgb(0 0 0 / 75%), inset -2px -2px 10px rgb(255 255 255 / 10%), inset 2px 2px 10px rgb(55 55 55 / 75%);
+  box-shadow: -2px -2px 10px rgb(255 255 255 / 10%),
+    2px 2px 10px rgb(0 0 0 / 75%), inset -2px -2px 10px rgb(255 255 255 / 10%),
+    inset 2px 2px 10px rgb(55 55 55 / 75%);
 }
 
 .sub-card-wrapper p {
@@ -809,7 +828,23 @@ p.copyRightText {
   padding: 25px;
   cursor: pointer;
   border-radius: 10px;
-  background: radial-gradient(57.89% 132% at 65.79% -35%, rgba(120, 123, 255, .06) 0%, rgba(120, 123, 255, 0) 100%), linear-gradient(180deg, rgb(255 255 255 / 0%) 54.17%, rgba(255, 255, 255, .04) 100%), rgb(255 255 255 / 5%);
+  background: radial-gradient(
+      57.89% 132% at 65.79% -35%,
+      rgba(120, 123, 255, 0.06) 0%,
+      rgba(120, 123, 255, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 0%) 54.17%,
+      rgba(255, 255, 255, 0.04) 100%
+    ),
+    rgb(255 255 255 / 5%);
+}
+
+.course-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-arb-wrapper {
@@ -848,7 +883,17 @@ p.copyRightText {
 }
 
 .input-bg-layout {
-  background: radial-gradient(57.89% 132% at 65.79% -35%, rgba(120, 123, 255, .06) 0%, rgba(120, 123, 255, 0) 100%), linear-gradient(180deg, rgb(255 255 255 / 0%) 54.17%, rgba(255, 255, 255, .04) 100%), rgb(255 255 255 / 5%);
+  background: radial-gradient(
+      57.89% 132% at 65.79% -35%,
+      rgba(120, 123, 255, 0.06) 0%,
+      rgba(120, 123, 255, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 0%) 54.17%,
+      rgba(255, 255, 255, 0.04) 100%
+    ),
+    rgb(255 255 255 / 5%);
   border: 0 solid;
   color: white;
 }
