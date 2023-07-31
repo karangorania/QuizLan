@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link href="/create" className="mx-2">
             Create
           </Link>
-          <Link href="/mints" className="mx-2">
+          <Link href="/mint" className="mx-2">
             Mint
           </Link>
           <Link href="/contact" className="mx-2">
