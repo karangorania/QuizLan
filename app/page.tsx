@@ -1,20 +1,20 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import images from "./assets";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import images from './assets';
 
 export default function Home() {
   const courses = [
     {
-      id: "phantom",
-      name: "Phantom Blockchain",
-      description: "Some description about Phantom Blockchain",
+      id: 'phantom',
+      name: 'Phantom Blockchain',
+      description: 'Some description about Phantom Blockchain',
       imgSrc: images.Phantom,
       structure: [
         {
           id: 1,
-          title: "WHAT IS PHANTOM",
-          link: "/quiz",
+          title: 'WHAT IS PHANTOM',
+          link: '/quiz',
         },
         // add more course structure items here as needed
       ],
@@ -44,25 +44,33 @@ export default function Home() {
           </div>
           <div className="sub-card-wrapper">
             <div className="card-nas-wrapper">
-              <Image src={images.NAS} alt="NasAcademyLogo" />
+              <Link href="/course/nas">
+                <Image src={images.NAS} alt="NasAcademyLogo" />
+              </Link>
             </div>
             <p>Nas Academy X Solana</p>
           </div>
           <div className="sub-card-wrapper">
             <div className="card-ec-wrapper">
-              <Image src={images.Encode} alt="EncodeLogo" />
+              <Link href="/course/encode">
+                <Image src={images.Encode} alt="EncodeLogo" />
+              </Link>
             </div>
             <p>Encode X Solana</p>
           </div>
           <div className="sub-card-wrapper">
             <div className="card-ph-wrapper">
-              <Image src={images.Phantom} alt="PhantomLogo" />
+              <Link href="/course/phantom">
+                <Image src={images.Phantom} alt="PhantomLogo" />
+              </Link>
             </div>
             <p>Phantom</p>
           </div>
           <div className="sub-card-wrapper">
             <div className="card-block-wrapper">
-              <Image src={images.BlockChain} alt="BlockchainLogo" />
+              <Link href="/course/blockchain">
+                <Image src={images.BlockChain} alt="BlockchainLogo" />
+              </Link>
             </div>
             <p>Blockchain</p>
           </div>
@@ -70,7 +78,7 @@ export default function Home() {
       </div>
       <div className="home-footer">
         <p id="poweredByText">
-          Made Love By{" "}
+          Made Love By{' '}
           <span id="poweredByBottomText">
             <span id="quizlan">QuizLan</span>
           </span>
