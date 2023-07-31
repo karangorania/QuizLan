@@ -4,7 +4,7 @@ import Solana from './Solana.jpeg';
 import Encode from './encode.jpeg';
 import BlockChain from './blockchain.png';
 import NAS from './nas.png';
-
+import nftMain from './nftmain.png';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   nft,
@@ -12,5 +12,6 @@ export default {
   Solana,
   NAS,
   Encode,
-  BlockChain
+  BlockChain,
+  nftMain,
 };
