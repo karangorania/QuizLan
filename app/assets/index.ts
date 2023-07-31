@@ -4,8 +4,10 @@ import nft from './nft.png';
 import Phantom from './Phantom.png';
 import MagicEden from './MagicEden.jpeg';
 import Polygon from './Polygon.jpeg';
-import Solana from './Solana.jpeg';
+import Solana from './solana.jpeg';
+import sol from './solana.png';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   arbitrum,
   avalanche,
@@ -14,4 +16,5 @@ export default {
   MagicEden,
   Polygon,
   Solana,
+  sol,
 };
