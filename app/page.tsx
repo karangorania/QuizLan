@@ -1,34 +1,20 @@
-'use client';
-import Image from 'next/image';
-import images from './assets';
-import Link from 'next/link';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import images from "./assets";
 
 export default function Home() {
   const courses = [
     {
-      id: 'arbitrum',
-      name: 'Arbitrum Blockchain',
-      description: 'Learn how to transact on chains beyond Ethereum mainnet...',
-      imgSrc: images.arbitrum,
-      structure: [
-        {
-          id: 1,
-          title: 'WHAT IS Arbi',
-          link: '/quiz',
-        },
-        // add more course structure items here as needed
-      ],
-    },
-    {
-      id: 'phantom',
-      name: 'Phantom Blockchain',
-      description: 'Some description about Phantom Blockchain',
+      id: "phantom",
+      name: "Phantom Blockchain",
+      description: "Some description about Phantom Blockchain",
       imgSrc: images.Phantom,
       structure: [
         {
           id: 1,
-          title: 'WHAT IS PHANTOM',
-          link: '/quiz',
+          title: "WHAT IS PHANTOM",
+          link: "/quiz",
         },
         // add more course structure items here as needed
       ],
@@ -49,12 +35,24 @@ export default function Home() {
         <h2 className="title">Categories</h2>
         <div className="wrapper">
           <div className="sub-card-wrapper">
-            <div className="card-arb-wrapper">
-              <Link href="/course">
-                <Image src={images.arbitrum} alt="ArbitrumLogo" />
+            <div className="card-sol-wrapper">
+              <Link href="/course/solana">
+                <Image src={images.Solana} alt="SolanaLogo" />
               </Link>
             </div>
-            <p>Arbitrum</p>
+            <p>Solana</p>
+          </div>
+          <div className="sub-card-wrapper">
+            <div className="card-nas-wrapper">
+              <Image src={images.NAS} alt="NasAcademyLogo" />
+            </div>
+            <p>Nas Academy X Solana</p>
+          </div>
+          <div className="sub-card-wrapper">
+            <div className="card-ec-wrapper">
+              <Image src={images.Encode} alt="EncodeLogo" />
+            </div>
+            <p>Encode X Solana</p>
           </div>
           <div className="sub-card-wrapper">
             <div className="card-ph-wrapper">
@@ -63,29 +61,16 @@ export default function Home() {
             <p>Phantom</p>
           </div>
           <div className="sub-card-wrapper">
-            <div className="card-pol-wrapper">
-              <Image src={images.Polygon} alt="PolygonLogo" />
+            <div className="card-block-wrapper">
+              <Image src={images.BlockChain} alt="BlockchainLogo" />
             </div>
-            <p>Polygon</p>
-          </div>
-          <div></div>
-          <div className="sub-card-wrapper">
-            <div className="card-av-wrapper">
-              <Image src={images.avalanche} alt="AvalancheLogo" />
-            </div>
-            <p>Avalanche</p>
-          </div>
-          <div className="sub-card-wrapper">
-            <div className="card-me-wrapper">
-              <Image src={images.MagicEden} alt="MagicEdenLogo" />
-            </div>
-            <p>Magic Eden</p>
+            <p>Blockchain</p>
           </div>
         </div>
       </div>
       <div className="home-footer">
         <p id="poweredByText">
-          Made Love By{' '}
+          Made Love By{" "}
           <span id="poweredByBottomText">
             <span id="quizlan">QuizLan</span>
           </span>
