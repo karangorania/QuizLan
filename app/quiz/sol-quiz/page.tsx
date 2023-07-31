@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import images from '../../assets';
-import { toast, Toaster } from 'react-hot-toast';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import images from "../../assets";
+import { toast, Toaster } from "react-hot-toast";
+import SOLMints from "./sol-mints";
 
 type Quiz = {
   id: number;
@@ -26,46 +27,46 @@ type Answer = {
 
 const solanaQuiz: Quiz = {
   id: 1,
-  name: 'What is Solana?',
+  name: "What is Solana?",
   questions: [
     {
       id: 1,
-      text: 'What consensus algorithm does Solana use?',
+      text: "What consensus algorithm does Solana use?",
       answers: [
-        { id: 1, text: 'Proof of Work (PoW)', isCorrect: false },
-        { id: 2, text: 'Proof of Stake (PoS)', isCorrect: true },
-        { id: 3, text: 'Delegated Proof of Stake (DPoS)', isCorrect: false },
-        { id: 4, text: 'Proof of Authority (PoA)', isCorrect: false },
+        { id: 1, text: "Proof of Work (PoW)", isCorrect: false },
+        { id: 2, text: "Proof of Stake (PoS)", isCorrect: true },
+        { id: 3, text: "Delegated Proof of Stake (DPoS)", isCorrect: false },
+        { id: 4, text: "Proof of Authority (PoA)", isCorrect: false },
       ],
     },
     {
       id: 2,
-      text: 'What is the primary programming language for Solana smart contracts?',
+      text: "What is the primary programming language for Solana smart contracts?",
       answers: [
-        { id: 1, text: 'Solidity', isCorrect: false },
-        { id: 2, text: 'Rust and C', isCorrect: true },
-        { id: 3, text: 'Python', isCorrect: false },
-        { id: 4, text: 'JavaScript', isCorrect: false },
+        { id: 1, text: "Solidity", isCorrect: false },
+        { id: 2, text: "Rust and C", isCorrect: true },
+        { id: 3, text: "Python", isCorrect: false },
+        { id: 4, text: "JavaScript", isCorrect: false },
       ],
     },
     {
       id: 3,
-      text: 'What does Solana’s architecture allow for?',
+      text: "What does Solana’s architecture allow for?",
       answers: [
-        { id: 1, text: 'High throughput and scalability', isCorrect: true },
-        { id: 2, text: 'Slow transaction speeds', isCorrect: false },
-        { id: 3, text: 'Limited number of validators', isCorrect: false },
-        { id: 4, text: 'Only supports private networks', isCorrect: false },
+        { id: 1, text: "High throughput and scalability", isCorrect: true },
+        { id: 2, text: "Slow transaction speeds", isCorrect: false },
+        { id: 3, text: "Limited number of validators", isCorrect: false },
+        { id: 4, text: "Only supports private networks", isCorrect: false },
       ],
     },
     {
       id: 4,
-      text: 'What unique technology does Solana utilize to create a historical record of transactions?',
+      text: "What unique technology does Solana utilize to create a historical record of transactions?",
       answers: [
-        { id: 1, text: 'Proof of History (PoH)', isCorrect: true },
-        { id: 2, text: 'Proof of Work (PoW)', isCorrect: false },
-        { id: 3, text: 'Sharding', isCorrect: false },
-        { id: 4, text: 'State Channels', isCorrect: false },
+        { id: 1, text: "Proof of History (PoH)", isCorrect: true },
+        { id: 2, text: "Proof of Work (PoW)", isCorrect: false },
+        { id: 3, text: "Sharding", isCorrect: false },
+        { id: 4, text: "State Channels", isCorrect: false },
       ],
     },
   ],
@@ -87,33 +88,16 @@ const Quiz = () => {
         setCurrentQuestion(currentQuestion + 1);
       }
     } else {
-      toast('Wrong answer, please try again.', {
-        icon: '❌',
+      toast("Wrong answer, please try again.", {
+        icon: "❌",
         style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
         },
       });
     }
   };
-
-  function ClaimBadge() {
-    return (
-      <div className="quiz-success-wrapper">
-        <div>
-          <h2>New badge earned!</h2>
-          <p>
-            Claim your badge with your crypto wallet. This won’t cost anything.
-          </p>
-          <button></button>
-        </div>
-        <div>
-          <Image src={images.arbitrum} alt="ArbitrumLogo" />
-        </div>
-      </div>
-    );
-  }
 
   function QuizQuestions() {
     return (
@@ -132,16 +116,11 @@ const Quiz = () => {
             ))}
           </div>
         </div>
-        <div className="quen-footer">
+        {/* <div className="quen-footer">
           {selectedAnswer && selectedAnswer.isCorrect && (
-            <button
-              onClick={() => setIsSuccess(true)}
-              className="button-layout"
-            >
-              Next Question
-            </button>
+            <button className="button-layout">Next Question</button>
           )}
-        </div>
+        </div> */}
       </>
     );
   }
@@ -155,9 +134,9 @@ const Quiz = () => {
       </div>
       <div className="quiz-content-wrapper">
         <p className="title-layot">
-          {isSuccess ? 'CLAIM BADGE' : 'SIMPLE QUIZ'}
+          {isSuccess ? "CLAIM BADGE" : "SIMPLE QUIZ"}
         </p>
-        {isSuccess ? <ClaimBadge /> : <QuizQuestions />}
+        {isSuccess ? <SOLMints /> : <QuizQuestions />}
         <Toaster position="bottom-right" reverseOrder={false} />
       </div>
     </div>
