@@ -24,13 +24,25 @@ export default function Home() {
 
   return (
     <div className="home-wrapper">
-      <div className="home-content">
-        <h2>Punny headline</h2>
-        <p>
-          And an even wittier subheading to boot. Jump start your marketing
-          efforts with this example based on Apple marketing pages.
-        </p>
+      {/* <hero> */}
+      <div className="mian flex justify-around items-center h-[90vh] mx-16">
+        {/* <div className=""> */}
+        <div className="absolute h-[500px] w-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-purple-700 to-slate-900 blur-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[.50] z-[-1]" />
+        {/* <Image
+            className="animate-[float_3s_ease-in-out_infinite]"
+            src={images.nftMain}
+            width={400}
+            alt="SolanaLogo"
+          /> */}
+        {/* </div> */}
+        <div className="tagline text-center">
+          <p className=" md:w-[550px] text-4xl font-extrabold">
+            Discover the joy of learning while having fun! Take our quizzes and
+            unlock the realms of knowledge.
+          </p>
+        </div>
       </div>
+      {/* </hero> */}
       <div className="home-sub-content">
         <h2 className="title">Categories</h2>
         <div className="wrapper">
