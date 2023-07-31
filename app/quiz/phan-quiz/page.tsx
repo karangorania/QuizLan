@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import images from '../../assets';
 import { toast, Toaster } from 'react-hot-toast';
-import SOLMints from './sol-mints';
+// import SOLMints from "./sol-mints";
 
 type Quiz = {
   id: number;
@@ -25,59 +25,68 @@ type Answer = {
   isCorrect: boolean;
 };
 
-const solanaQuiz: Quiz = {
-  id: 1,
-  name: 'What is Solana?',
+const phantomQuiz: Quiz = {
+  id: 2,
+  name: 'What is Phantom Wallet?',
   questions: [
     {
       id: 1,
-      text: 'What consensus algorithm does Solana use?',
+      text: 'Which blockchains does Phantom Wallet support?',
       answers: [
-        { id: 1, text: 'Proof of Work (PoW)', isCorrect: false },
-        { id: 2, text: 'Proof of Stake (PoS)', isCorrect: true },
-        { id: 3, text: 'Delegated Proof of Stake (DPoS)', isCorrect: false },
-        { id: 4, text: 'Proof of Authority (PoA)', isCorrect: false },
+        { id: 1, text: 'Only Solana', isCorrect: false },
+        { id: 2, text: 'Solana, Ethereum and Polygon', isCorrect: true },
+        { id: 3, text: 'Only Ethereum', isCorrect: false },
+        { id: 4, text: 'Only Binance Smart Chain', isCorrect: false },
       ],
     },
     {
       id: 2,
-      text: 'What is the primary programming language for Solana smart contracts?',
+      text: 'What functionality does Phantom Wallet offer?',
       answers: [
-        { id: 1, text: 'Solidity', isCorrect: false },
-        { id: 2, text: 'Rust and C', isCorrect: true },
-        { id: 3, text: 'Python', isCorrect: false },
-        { id: 4, text: 'JavaScript', isCorrect: false },
+        {
+          id: 1,
+          text: 'Asset management, dApp interaction, and token swapping',
+          isCorrect: true,
+        },
+        { id: 2, text: 'Mining cryptocurrency', isCorrect: false },
+        { id: 3, text: 'Launching your own token', isCorrect: false },
+        { id: 4, text: 'None of the above', isCorrect: false },
       ],
     },
     {
       id: 3,
-      text: 'What does Solana’s architecture allow for?',
+      text: 'What tokens does Phantom Wallet support?',
       answers: [
-        { id: 1, text: 'High throughput and scalability', isCorrect: true },
-        { id: 2, text: 'Slow transaction speeds', isCorrect: false },
-        { id: 3, text: 'Limited number of validators', isCorrect: false },
-        { id: 4, text: 'Only supports private networks', isCorrect: false },
+        { id: 1, text: 'Only SOL token', isCorrect: false },
+        {
+          id: 2,
+          text: 'All Ethereum, Polygon and Solana SPL tokens',
+          isCorrect: true,
+        },
+        { id: 3, text: 'Only BTC and ETH', isCorrect: false },
+        { id: 4, text: 'Only Binance BEP-20 tokens', isCorrect: false },
       ],
     },
     {
       id: 4,
-      text: 'What unique technology does Solana utilize to create a historical record of transactions?',
+      text: 'Can you swap tokens directly within the Phantom Wallet?',
       answers: [
-        { id: 1, text: 'Proof of History (PoH)', isCorrect: true },
-        { id: 2, text: 'Proof of Work (PoW)', isCorrect: false },
-        { id: 3, text: 'Sharding', isCorrect: false },
-        { id: 4, text: 'State Channels', isCorrect: false },
+        { id: 1, text: 'Yes', isCorrect: true },
+        { id: 2, text: 'No', isCorrect: false },
+        { id: 3, text: 'Only specific tokens', isCorrect: false },
+        { id: 4, text: 'Only on Tuesdays', isCorrect: false },
       ],
     },
   ],
 };
 
-const Quiz = () => {
+// const Quiz = () => {
+const Phan = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null);
 
-  const questions = solanaQuiz.questions;
+  const questions = phantomQuiz.questions;
 
   const handleAnswerClick = (answer: Answer) => {
     setSelectedAnswer(answer);
@@ -128,13 +137,13 @@ const Quiz = () => {
   return (
     <div className="quiz-detail-wrapper">
       <div className="quiz-back-wrapper">
-        <Link href="/course/solana">
-          <p>&#x2190; Solana</p>
+        <Link href="/course/phantom">
+          <p>&#x2190; Phantom</p>
         </Link>
       </div>
       <div className="quiz-content-wrapper">
         <p className="title-layot">{isSuccess ? 'CLAIM BADGE' : 'QUIZ'}</p>
-        {isSuccess ? <SOLMints /> : <QuizQuestions />}
+        {isSuccess ? <></> : <QuizQuestions />}
         <Toaster position="bottom-right" reverseOrder={false} />
       </div>
     </div>
@@ -142,4 +151,4 @@ const Quiz = () => {
   //   );
 };
 
-export default Quiz;
+export default Phan;

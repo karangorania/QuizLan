@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import images from '../../assets';
 import { toast, Toaster } from 'react-hot-toast';
-import SOLMints from './sol-mints';
+// import SOLMints from "./sol-mints";
 
 type Quiz = {
   id: number;
@@ -25,59 +25,88 @@ type Answer = {
   isCorrect: boolean;
 };
 
-const solanaQuiz: Quiz = {
-  id: 1,
-  name: 'What is Solana?',
+const blockchainQuiz: Quiz = {
+  id: 3,
+  name: 'What is Blockchain Technology?',
   questions: [
     {
       id: 1,
-      text: 'What consensus algorithm does Solana use?',
+      text: 'What does Blockchain technology provide?',
       answers: [
-        { id: 1, text: 'Proof of Work (PoW)', isCorrect: false },
-        { id: 2, text: 'Proof of Stake (PoS)', isCorrect: true },
-        { id: 3, text: 'Delegated Proof of Stake (DPoS)', isCorrect: false },
-        { id: 4, text: 'Proof of Authority (PoA)', isCorrect: false },
+        { id: 1, text: 'Centralized database system', isCorrect: false },
+        {
+          id: 2,
+          text: 'Decentralized and distributed digital ledger',
+          isCorrect: true,
+        },
+        { id: 3, text: 'Physical storage system', isCorrect: false },
+        { id: 4, text: 'A new form of currency', isCorrect: false },
       ],
     },
     {
       id: 2,
-      text: 'What is the primary programming language for Solana smart contracts?',
+      text: 'Can data, once recorded in a blockchain, be easily altered?',
       answers: [
-        { id: 1, text: 'Solidity', isCorrect: false },
-        { id: 2, text: 'Rust and C', isCorrect: true },
-        { id: 3, text: 'Python', isCorrect: false },
-        { id: 4, text: 'JavaScript', isCorrect: false },
+        { id: 1, text: 'Yes, very easily', isCorrect: false },
+        { id: 2, text: 'No, it is very difficult', isCorrect: true },
+        { id: 3, text: 'Only in private blockchains', isCorrect: false },
+        { id: 4, text: 'Only on Sundays', isCorrect: false },
       ],
     },
     {
       id: 3,
-      text: 'What does Solana’s architecture allow for?',
+      text: 'Is blockchain technology only used for cryptocurrencies?',
       answers: [
-        { id: 1, text: 'High throughput and scalability', isCorrect: true },
-        { id: 2, text: 'Slow transaction speeds', isCorrect: false },
-        { id: 3, text: 'Limited number of validators', isCorrect: false },
-        { id: 4, text: 'Only supports private networks', isCorrect: false },
+        {
+          id: 1,
+          text: "Yes, it's only used for cryptocurrencies",
+          isCorrect: false,
+        },
+        {
+          id: 2,
+          text: 'No, it has countless other applications',
+          isCorrect: true,
+        },
+        {
+          id: 3,
+          text: 'Only Bitcoin uses blockchain technology',
+          isCorrect: false,
+        },
+        { id: 4, text: 'Blockchain technology is a myth', isCorrect: false },
       ],
     },
     {
       id: 4,
-      text: 'What unique technology does Solana utilize to create a historical record of transactions?',
+      text: 'Is blockchain technology secure?',
       answers: [
-        { id: 1, text: 'Proof of History (PoH)', isCorrect: true },
-        { id: 2, text: 'Proof of Work (PoW)', isCorrect: false },
-        { id: 3, text: 'Sharding', isCorrect: false },
-        { id: 4, text: 'State Channels', isCorrect: false },
+        {
+          id: 1,
+          text: 'Yes, due to cryptographic and algorithmic methods',
+          isCorrect: true,
+        },
+        { id: 2, text: "No, it's very easy to hack", isCorrect: false },
+        {
+          id: 3,
+          text: 'Only private blockchains are secure',
+          isCorrect: false,
+        },
+        {
+          id: 4,
+          text: 'Security depends on the mood of the blockchain',
+          isCorrect: false,
+        },
       ],
     },
   ],
 };
 
-const Quiz = () => {
+// const Quiz = () => {
+const Block = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null);
 
-  const questions = solanaQuiz.questions;
+  const questions = blockchainQuiz.questions;
 
   const handleAnswerClick = (answer: Answer) => {
     setSelectedAnswer(answer);
@@ -128,13 +157,13 @@ const Quiz = () => {
   return (
     <div className="quiz-detail-wrapper">
       <div className="quiz-back-wrapper">
-        <Link href="/course/solana">
-          <p>&#x2190; Solana</p>
+        <Link href="/course/blockchain">
+          <p>&#x2190; Blockchain</p>
         </Link>
       </div>
       <div className="quiz-content-wrapper">
         <p className="title-layot">{isSuccess ? 'CLAIM BADGE' : 'QUIZ'}</p>
-        {isSuccess ? <SOLMints /> : <QuizQuestions />}
+        {isSuccess ? <></> : <QuizQuestions />}
         <Toaster position="bottom-right" reverseOrder={false} />
       </div>
     </div>
@@ -142,4 +171,4 @@ const Quiz = () => {
   //   );
 };
 
-export default Quiz;
+export default Block;
