@@ -1,9 +1,41 @@
-"use client";
-import Image from "next/image";
-import images from "./assets";
-import Link from "next/link";
+'use client';
+import Image from 'next/image';
+import images from './assets';
+import Link from 'next/link';
 
 export default function Home() {
+  const courses = [
+    {
+      id: 'arbitrum',
+      name: 'Arbitrum Blockchain',
+      description: 'Learn how to transact on chains beyond Ethereum mainnet...',
+      imgSrc: images.arbitrum,
+      structure: [
+        {
+          id: 1,
+          title: 'WHAT IS Arbi',
+          link: '/quiz',
+        },
+        // add more course structure items here as needed
+      ],
+    },
+    {
+      id: 'phantom',
+      name: 'Phantom Blockchain',
+      description: 'Some description about Phantom Blockchain',
+      imgSrc: images.Phantom,
+      structure: [
+        {
+          id: 1,
+          title: 'WHAT IS PHANTOM',
+          link: '/quiz',
+        },
+        // add more course structure items here as needed
+      ],
+    },
+    // add more courses here as needed
+  ];
+
   return (
     <div className="home-wrapper">
       <div className="home-content">
@@ -53,7 +85,7 @@ export default function Home() {
       </div>
       <div className="home-footer">
         <p id="poweredByText">
-          Made Love By{" "}
+          Made Love By{' '}
           <span id="poweredByBottomText">
             <span id="quizlan">QuizLan</span>
           </span>
