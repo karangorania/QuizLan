@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# QuizLan
+
+QuizLan is a decentralized quiz and feedback platform built on the Solana blockchain. This application is designed to provide a secure, interactive, and efficient system for organizing quizzes, collecting feedback, and rewarding participants with minted NFTs.
+
+## Features
+
+- Create quizzes with custom questions and answers.
+- Collect user feedback on various events, sessions, and courses.
+- Mint unique NFTs as rewards for quiz participation or feedback submission.
+- Ensure data integrity and reliability with Solana's blockchain technology.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Node.js
+- Yarn or npm
+- Git
+- Solana CLI
+- Any Solana Wallet
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### CandyMachine Id Account
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Sol-Quiz](https://solscan.io/account/9yDon6UgfBA4Xip46v2UjRDvXM5zp3pxGfLx4x9wA1KD?cluster=devnet)
+- [Phan-Quiz](https://solscan.io/account/2e9PF9mHXo63kYKHcyCp7ny7rxjhfFBP3j5V7oN8YjDQ?cluster=devnet)
+- [Nas-Quiz](https://solscan.io/account/4ZBvPTC2hUmtHjZLx1kLYswuPfxnpyAc6pbeTtyaMrUk?cluster=devnet)
+- [Enco-Quiz](https://solscan.io/account/Bdx4NmQbXJu898hYPa5RKCBUdSKGMBobjw6GaLsns7vR?cluster=devnet)
+- [Block-Quiz](https://solscan.io/account/G4xLHBiG6Jq6gVhwwq2XRpKjhNkUBeNMS3AKNLWTdcKc?cluster=devnet)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+1. Clone the repository:
+    ```
+    git clone https://github.com/your-username/QuizLan.git
+    ```
+2. Navigate into the cloned repository:
+    ```
+    cd QuizLan
+    ```
+3. Install the project dependencies:
+    ```
+    yarn install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
