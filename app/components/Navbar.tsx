@@ -1,12 +1,12 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 import {
   WalletModalProvider,
   WalletDisconnectButton,
   WalletMultiButton,
-} from "@solana/wallet-adapter-react-ui";
+} from '@solana/wallet-adapter-react-ui';
 
 const Navbar = () => {
   return (
@@ -21,15 +21,15 @@ const Navbar = () => {
           </Link>
         </div>
         <nav className="text-white nav-center-layout">
-          <Link href="/create" className="mx-2">
+          <Link href="#" className="mx-2">
             Create
           </Link>
-          <Link href="/mint" className="mx-2">
+          <Link href="/quiz/sol-quiz" className="mx-2">
             Mint
           </Link>
-          <Link href="/contact" className="mx-2">
+          {/* <Link href="/contact" className="mx-2">
             Contact
-          </Link>
+          </Link> */}
         </nav>
         <div>
           <WalletMultiButton />
